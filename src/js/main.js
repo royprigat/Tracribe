@@ -1,79 +1,87 @@
 // Listen for form submit
-document.getElementById('myForm').addEventListener('submit', saveBookmark);
+document.getElementById('myForm').addEventListener('submit', saveSubscription);
 
-function saveBookmark(e) {
+function saveSubscription(e) {
   // Get form values
   const siteName = document.getElementById('siteName').value;
+  const userName = document.getElementById('userName').value;
+  const passWord = document.getElementById('passWord').value;
   const siteUrl = document.getElementById('siteUrl').value;
 
   if (!validateForm(siteName, siteUrl)) {
     return false;
   }
 
-  const bookmark = {
+  const subscription = {
     name: siteName,
+    uname: userName,
+    pass: passWord,
     url: siteUrl
   };
 
-  // Test if bookmarks is null
-  if (localStorage.getItem('bookmarks') === null) {
-    const bookmarks = [];
-    bookmarks.push(bookmark);
+  // Test if subscriptions is null
+  if (localStorage.getItem('subscriptions') === null) {
+    const subscriptions = [];
+    subscriptions.push(subscription);
     // Set to localStorage
-    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    localStorage.setItem('subscriptions', JSON.stringify(subscriptions));
   } else {
-    // Get bookmarks from localStorage
-    const bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
-    bookmarks.push(bookmark);
-    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    // Get subscriptions from localStorage
+    const subscriptions = JSON.parse(localStorage.getItem('subscriptions'));
+    subscriptions.push(subscription);
+    localStorage.setItem('subscriptions', JSON.stringify(subscriptions));
   }
 
   // Clear form
   document.getElementById('myForm').reset();
-  // Re-fetch bookmarks
-  fetchBookmarks();
+  // Re-fetch subscriptions
+  fetchSubscriptions();
   // Hide modal
   $('#addSubModal').modal('toggle');
   // Prevent form from submitting
   e.preventDefault();
 }
 
-// Delete bookmark
-function deleteBookmark(url) {
-  // Get bookmarks from localStorage
-  const bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
-  // Loop throught bookmarks
-  for (let i = 0; i < bookmarks.length; i += 1) {
-    if (bookmarks[i].url === url) {
+// Delete subscription
+function deleteSubscription(url) {
+  // Get subscriptions from localStorage
+  const subscriptions = JSON.parse(localStorage.getItem('subscriptions'));
+  // Loop throught subscriptions
+  for (let i = 0; i < subscriptions.length; i += 1) {
+    if (subscriptions[i].url === url) {
       // Remove from array
-      bookmarks.splice(i, 1);
+      subscriptions.splice(i, 1);
     }
   }
   // Re-set back to localStorage
-  localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+  localStorage.setItem('subscriptions', JSON.stringify(subscriptions));
 
-  // Re-fetch bookmarks
-  fetchBookmarks();
+  // Re-fetch subscriptions
+  fetchSubscriptions();
 }
 
-// Fetch bookmarks
-function fetchBookmarks() {
-  // Get bookmarks from localStorage
-  const bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+// Fetch subscriptions
+function fetchSubscriptions() {
+  // Get subscriptions from localStorage
+  const subscriptions = JSON.parse(localStorage.getItem('subscriptions'));
   // Get output id
-  const subscriptions = document.getElementById('subscriptions');
+  const subscriptionsPanel = document.getElementById('subscriptions');
 
   // Build output
-  subscriptions.innerHTML = '';
-  for (let i = 0; i < bookmarks.length; i += 1) {
-    const name = bookmarks[i].name;
-    const url = bookmarks[i].url;
+  subscriptionsPanel.innerHTML = '';
+  for (let i = 0; i < subscriptions.length; i += 1) {
+    const name = subscriptions[i].name;
+    const uname = subscriptions[i].uname;
+    const pass = subscriptions[i].pass;
+    const url = subscriptions[i].url;
 
-    subscriptions.innerHTML += '<div class="well">' +
-      '<h3>' + name +
-      ' <a class="btn btn-default" target="_blank" href="' + url + '">Visit</a> ' +
-      ' <a onclick="deleteBookmark(\'' + url + '\')" class="btn btn-danger delete" href="#">-</a> ' +
-      '</h3>' +
+    // add to panel
+    subscriptionsPanel.innerHTML += '<div class="subscription">' +
+      '<div class="title">' + name + '</div>' +
+      '<div class="info"><div class="uname"><div>Username:</div><span style="font-weight: 400; padding: 7px">' + uname + '</span></div>' + 
+      '<div class="pass"><div>Password:</div><span style="font-weight: 400; padding: 7px">' + pass + '</span></div></div>' +
+      '<div class="extra"> <a class="btn btn-default url" target="_blank" href="' + url + '">Visit</a> ' +
+      '<a onclick="deleteSubscription(\'' + url + '\')" class="btn btn-danger delete" href="#">-</a></div>' +
       '</div>';
   }
 }
@@ -95,3 +103,4 @@ function validateForm(siteName, siteUrl) {
 
   return true;
 }
+

@@ -6,6 +6,7 @@ body {
 
 .header {
   padding-top: 20px;
+  padding-bottom: 20px;
   border-bottom: 1px solid #e5e5e5;
   max-width: 700px;
   margin: auto;
@@ -29,6 +30,46 @@ body {
   float: right;
 }
 
+.title {
+  padding: 24px;
+  width: 20%;
+  text-align: center;
+  margin: 0px;
+  font-size: 25px;
+  font-weight: 700;
+  border-right: 1px solid rgb(224, 224, 224);
+}
+
+.info {
+  width: 70%;
+  padding-left: 10px;
+}
+
+.uname, .pass {
+  display: flex;
+  height: 50%;
+  padding: 3px;
+  font-weight: 700;
+}
+
+.info>div>div {
+  width: 85px;
+  padding: 8px;
+  margin-right: 10px;
+  background: rgb(255, 255, 255);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.extra {
+  display: inline-grid;
+  width: 10%;
+}
+
+.extra > a {
+  margin: 2px;
+}
+
 .form-group {
   padding: 2px;
   text-align: left;
@@ -41,10 +82,6 @@ body {
 
 label {
   margin-top: 7px;
-}
-
-.delete {
-  float: right;
 }
 
 /* Custom page footer */
@@ -87,7 +124,21 @@ label {
 }
 
 #subscriptions {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
   margin-top: 50px;
+}
+
+.subscription {
+  display: flex;
+  background: #ebebeb;
+  border-radius: 5px;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.274);
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  margin-top: 20px;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -99,10 +150,7 @@ label {
     padding-right: 0;
     padding-left: 0;
   }
-  /* Space out the masthead */
-  .header {
-    padding-bottom: 20px;
-  }
+
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
