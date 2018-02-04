@@ -1,14 +1,17 @@
 # Tracribe <img src=./src/img/subscribe.svg width=50 height=20 />
 
-Simple application for keeping track of your personal subscriptions  <br>
+Simple desktop application(electron) for keeping track of your personal subscriptions <br>
 It uses localStorage for storing information(up to 5MB)
 
 ### Version
 1.0.0
 
-### Usage
+### Prerequisites
+Node
 
-npm run make - build the app and produce an executable
+### Usage
+In the root directory, build the app using the "npm run make" script <br>
+This will produce the "out" directory, in which you will find the executable for the app
 
 ### Screenshot
 ![Screenshot](example.png)
