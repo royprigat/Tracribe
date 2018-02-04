@@ -36,8 +36,7 @@ function saveSubscription(e) {
   document.getElementById('myForm').reset();
   // Re-fetch subscriptions
   fetchSubscriptions();
-  // Hide modal
-  $('#addSubModal').modal('toggle');
+
   // Prevent form from submitting
   e.preventDefault();
 }

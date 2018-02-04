@@ -19,58 +19,38 @@
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="header">
         <img src="./img/logo.svg" alt="">
-        <button id="add_button" class="btn btn-info" type="button" data-toggle="modal" data-target="#addSubModal">+</button>
       </div>
     </nav>
 
-    <!-- Modal -->
-    <div class="modal fade" id="addSubModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h4 class="modal-title" id="myModalLabel">Add Subscription</h4>
-          </div>
-          <div class="modal-body">
-
-              <div class="jumbotron">
-                  <form id="myForm">
-                    <div class="form-group">
-                      <label>Title:</label>
-                      <input type="text" class="form-control" id="siteName" placeholder="Enter website or service name">
-                    </div>
-                    <div class="form-group">
-                        <label>Username:</label>
-                        <input type="text" class="form-control" id="userName" placeholder="Enter username">
-                    </div>
-                    <div class="form-group">
-                        <label>Password:</label>
-                        <input type="text" class="form-control" id="passWord" placeholder="Enter password">
-                    </div>
-                    <div class="form-group">
-                      <label>Direct Link:</label>
-                      <input type="text" class="form-control" id="siteUrl" placeholder="Enter website URL">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Add</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </form>
-                </div>
-
-          </div>
+    <div class="jumbotron">
+      <form id="myForm">
+        <div class="form-group">
+          <label>Title:</label>
+          <input type="text" class="form-control" id="siteName" placeholder="Enter website or service name">
         </div>
-      </div>
+        <div class="form-group">
+          <label>Username:</label>
+          <input type="text" class="form-control" id="userName" placeholder="Enter username">
+        </div>
+        <div class="form-group">
+          <label>Password:</label>
+          <input type="text" class="form-control" id="passWord" placeholder="Enter password">
+        </div>
+        <div class="form-group">
+          <label>Direct Link:</label>
+          <input type="text" class="form-control" id="siteUrl" placeholder="Enter website URL">
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+      </form>
     </div>
 
+  <div class="row marketing">
+    <div id="subscriptions"></div>
+  </div>
 
-    <div class="row marketing">
-        <div id="subscriptions"></div>
-    </div>
-
-    <footer class="footer">
-      <p>&copy; 2018 Tracribe</p>
-    </footer>
+  <footer class="footer">
+    <p>&copy; 2018 Tracribe</p>
+  </footer>
 
   </div>
   <!-- /container -->

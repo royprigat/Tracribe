@@ -103,9 +103,11 @@ label {
 
 /* Main marketing message and sign up button */
 .jumbotron {
-  background: white;
+  margin-top: 80px;
+  background: #ebebeb;
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.274);
   margin-bottom: 0px;
 }
 .jumbotron .btn {
@@ -155,7 +157,7 @@ label {
   .jumbotron {
     border-bottom: 0;
     margin-bottom: 0px;
-    padding-top: 15px;
+    padding-top: 20px;
     padding-bottom: 25px;
   }
 }
