@@ -10,7 +10,9 @@ It uses localStorage for storing information(up to 5MB)
 Node
 
 ### Usage
-In the root directory, build the app using the "npm run make" script <br>
+First, run <b>"npm install"</b> in the root directory to make sure all dependencies are set <br>
+<br>
+In the root directory, build the app using the <b>"npm run make"</b> script <br>
 This will produce the "out" directory, in which you will find the executable for the app
 
 ### Screenshot
