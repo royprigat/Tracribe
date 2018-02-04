@@ -1,6 +1,6 @@
-# Tracribe - store subscriptions info locally
+# Tracribe - store subscriptions locally
 
-Simple application for keeping track of your personal subscriptions
+Simple application for keeping track of your personal subscriptions <br>
 It uses localStorage for storing information(up to 5MB)
 
 ### Version
