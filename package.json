@@ -3,7 +3,7 @@
   "productName": "Tracribe",
   "version": "1.0.0",
   "description": "Track your subscriptions",
-  "main": "src/index.js",
+  "main": "src/electron.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
@@ -29,7 +29,8 @@
         ]
       },
       "electronPackagerConfig": {
-        "packageManager": "npm"
+        "packageManager": "npm",
+        "icon": "src/img/subscribe.svg.icns"
       },
       "electronWinstallerConfig": {
         "name": "tracribe"
