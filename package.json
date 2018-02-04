@@ -1,8 +1,8 @@
 {
   "name": "tracribe",
-  "productName": "tracribe",
+  "productName": "Tracribe",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Track your subscriptions",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
