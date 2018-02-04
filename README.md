@@ -9,3 +9,6 @@ It uses localStorage for storing information(up to 5MB)
 ### Usage
 
 npm run make - build the app and produce an executable
+
+### Screenshot
+![Screenshot](example.png)
