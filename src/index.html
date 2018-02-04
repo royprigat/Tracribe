@@ -1,58 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tracribe</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tracribe</title>
 
-  <body onload="fetchBookmarks()">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
 
-    <div class="container">
-      <div class="header clearfix">
-        <nav>
+<body onload="fetchBookmarks()">
 
-        </nav>
+  <div class="container">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="header">
         <img src="./img/logo.svg" alt="">
+        <button id="add_button" class="btn btn-info" type="button" data-toggle="modal" data-target="#addSubModal">+</button>
       </div>
+    </nav>
 
-      <div class="jumbotron">
-        <h2>Bookmark Your Subscriptions</h2>
-        <form id="myForm">
-          <div class="form-group">
-            <label>Site Name</label>
-            <input type="text" class="form-control" id="siteName" placeholder="Website Name">
+    <!-- Modal -->
+    <div class="modal fade" id="addSubModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Add Subscription</h4>
           </div>
-          <div class="form-group">
-            <label>Site URL</label>
-            <input type="text" class="form-control" id="siteUrl" placeholder="Website URL">
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
+          <div class="modal-body">
 
-      <div class="row marketing">
-        <div class="col-lg-12">
-          <div id="bookmarksResults"></div>
+              <div class="jumbotron">
+                  <form id="myForm">
+                    <div class="form-group">
+                      <label>Title:</label>
+                      <input type="text" class="form-control" id="siteName" placeholder="Enter website or service name">
+                    </div>
+                    <div class="form-group">
+                        <label>Username:</label>
+                        <input type="text" class="form-control" id="userName" placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <label>Password:</label>
+                        <input type="text" class="form-control" id="passWord" placeholder="Enter password">
+                    </div>
+                    <div class="form-group">
+                      <label>Direct Link:</label>
+                      <input type="text" class="form-control" id="siteUrl" placeholder="Enter website URL">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </form>
+                </div>
+
+          </div>
         </div>
       </div>
+    </div>
 
-      <footer class="footer">
-        <p>&copy; 2018 Tracribe</p>
-      </footer>
 
-    </div> <!-- /container -->
+    <div class="row marketing">
+      <div class="col-lg-12">
+        <div id="subscriptions"></div>
+      </div>
+    </div>
 
-    <script
-    src="https://code.jquery.com/jquery-3.1.1.js"
-    integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-    crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+    <footer class="footer">
+      <p>&copy; 2018 Tracribe</p>
+    </footer>
+
+  </div>
+  <!-- /container -->
+
+  <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/modal.js"></script>
+</body>
+
 </html>
